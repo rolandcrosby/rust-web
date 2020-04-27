@@ -1,0 +1,12 @@
+version: '3'
+services: 
+    db:
+        image: postgres:12
+        ports:
+            - 5432:5432
+        command: -c ssl=on -c ssl_ca_file=/certs/rootCA.pem -c ssl_cert_file=/certs/postgres.pem -c ssl_key_file=/certs/postgres-key.pem
+        env_file: postgres.env
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+            - ./certs:/certs
+            - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf

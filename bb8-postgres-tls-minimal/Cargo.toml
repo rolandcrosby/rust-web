@@ -1,0 +1,15 @@
+[package]
+name = "bb8-postgres-tls-minimal"
+version = "0.1.0"
+authors = ["Roland Crosby <roland@rolandcrosby.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bb8 = "0.4.2"
+bb8-postgres = "0.4.0"
+tokio-postgres = "0.5.3"
+tokio = {version = "0.2.19", features = ["full"]}
+postgres-native-tls = "0.3.0"
+native-tls = "0.2.4"
